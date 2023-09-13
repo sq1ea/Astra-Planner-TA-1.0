@@ -2,9 +2,7 @@
 
 Привет!
 
-В зависимости от того на какую позицию вы собеседуетесь вам нужно выполнить тестовое задание:
-
-[Младший разработчик](https://gitflic.ru/project/gitflic/developer-test-task/file?file=junior-developer)
+[Тестовое задание на позицию разработчика](https://gitflic.ru/project/gitflic/developer-test-task/blob?file=developer-task%2FReadme.md&branch=main)
 
 ## Как cдать свой вариант решения 
 Для того чтобы сдать свое тестовое задание необходимо сделать форк от этого репозитория, 
