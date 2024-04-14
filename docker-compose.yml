@@ -1,0 +1,25 @@
+services:
+  postgresqldb:
+   image: postgres:12
+   environment:
+     POSTGRES_DB: postgres
+     POSTGRES_USER: postgres
+     POSTGRES_USERNAME: postgres
+     POSTGRES_PASSWORD: postgres
+   ports:
+     - 5432:5432
+   healthcheck:
+     test: [ CMD-SHELL, pg_isready -U postgres -d postgres ]
+     interval: 10s
+     timeout: 5s
+     retries: 5
+  server:
+   build: ./
+   ports:
+     - 8080:8080
+   environment:
+     DB_PORT: 5432
+     DB_DATABASE: postgres
+     DB_USER: postgres
+     DB_PASSWORD: postgres
+
