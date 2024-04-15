@@ -1,8 +1,7 @@
 package com.astra.api.rest;
 
-import com.astra.api.exception.UsernameAlreadyTaken;
-import com.astra.api.exception.UsernameMustBeFilled;
 import com.astra.core.dto.user.UserCreateEdit;
+import com.astra.core.dto.user.UserRead;
 import com.astra.security.authority.Role;
 import com.astra.security.config.SecurityConfiguration;
 import com.astra.core.service.UserService;
@@ -13,6 +12,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -48,6 +51,16 @@ public class UserController {
         }
         return ResponseEntity.ok(jwtUtil.generateToken(jwtRequest.getUsername()));
     }
+
+    @GetMapping("/current-list-of-users")
+    public ResponseEntity<List<UserRead>> currentUsers () {
+        return ResponseEntity.ok(new ArrayList<>(service.findAll()));
+    }
+    @GetMapping("/user/{id}")
+    public ResponseEntity<Optional<UserRead>> byId (@PathVariable("id") Integer id) {
+        return ResponseEntity.ok(service.findById(id));
+    }
+
 
 
 

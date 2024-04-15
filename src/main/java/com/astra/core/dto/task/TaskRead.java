@@ -31,9 +31,14 @@ public class TaskRead {
         this.updatedAt = updatedAt;
     }
 
+    public TaskRead(UserRead owner) {
+        this.owner = owner;
+    }
+
     public Integer getId() {
         return id;
     }
+
 
     public void setId(Integer id) {
         this.id = id;

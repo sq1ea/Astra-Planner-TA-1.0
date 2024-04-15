@@ -4,7 +4,6 @@ import com.astra.security.authority.Role;
 import lombok.*;
 
 import java.time.LocalDateTime;
-@Value
 public class UserRead {
      Integer id;
      Role role;
@@ -25,6 +24,19 @@ public class UserRead {
           this.createdAt = createdAt;
           this.updatedAt = updatedAt;
      }
+
+     public UserRead(Integer id) {
+          this.id = id;
+     }
+
+     public UserRead(Integer id, String username) {
+          this.id = id;
+          this.username = username;
+     }
+
+     public UserRead() {
+     }
+
 
      public Integer getId() {
           return id;
