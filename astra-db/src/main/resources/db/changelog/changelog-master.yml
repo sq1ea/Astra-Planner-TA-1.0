@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - changeSet:
+      id: init_planner_db
+      author: Pavel_Zhykhar
+  - include:
+      file: db\changelog\v1.0\01-init-db-schema.yaml
